@@ -20,7 +20,12 @@ cd ~/coderepo/agents
 ./install.sh
 ```
 
-On Windows, run it from Git Bash. Existing files are backed up to `~/.claude/backups/` before being replaced. Restart Claude Code afterwards.
+The script asks how to install:
+
+- **Replace**: the repo's `CLAUDE.md`, `settings.json` and skills overwrite yours. Skills you have that aren't in the repo are kept.
+- **Merge**: only adds what's missing. New settings, new `##` sections of `CLAUDE.md` and new skills are added; where both have a value, yours wins. Needs `jq`.
+
+On Windows, run it from Git Bash. Existing files are backed up to `~/.claude/backups/` before anything changes. Restart Claude Code afterwards.
 
 ## Adding or updating something
 
