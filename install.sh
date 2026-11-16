@@ -40,7 +40,7 @@ if [ "$MODE" = merge ] && ! command -v jq >/dev/null; then
   exit 1
 fi
 
-mkdir -p "$CLAUDE_DIR/skills" "$BACKUP_DIR"
+mkdir -p "$CLAUDE_DIR/skills" "$CLAUDE_DIR/hooks" "$BACKUP_DIR"
 
 for file in CLAUDE.md settings.json; do
   if [ -f "$CLAUDE_DIR/$file" ]; then
@@ -76,6 +76,20 @@ for skill in "$REPO_DIR"/skills/*/; do
     rm -rf "$target"
   fi
   cp -R "$skill" "$target"
+done
+
+for hook in "$REPO_DIR"/hooks/*; do
+  name="$(basename "$hook")"
+  target="$CLAUDE_DIR/hooks/$name"
+  if [ -f "$target" ] && [ "$MODE" = merge ]; then
+    echo "Kept your existing hook: $name"
+    continue
+  fi
+  if [ -f "$target" ]; then
+    cp "$target" "$BACKUP_DIR/"
+  fi
+  cp "$hook" "$target"
+  chmod +x "$target"
 done
 
 echo "Installed into $CLAUDE_DIR using $MODE mode (previous files backed up to $BACKUP_DIR)"

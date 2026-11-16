@@ -17,5 +17,18 @@
     "claude-opus-5-5": {
       "effortLevel": "high"
     }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/ui-preview-reminder.sh"
+          }
+        ]
+      }
+    ]
   }
 }
