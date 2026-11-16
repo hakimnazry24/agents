@@ -1,4 +1,4 @@
-# claude-config
+# agents
 
 My personal Claude Code setup: global instructions, skills, and settings, so any laptop can be set up the same way.
 
@@ -15,8 +15,8 @@ Skills synced from claude.ai (docx, pdf, deep-research, etc.) are not stored her
 ## Install on a new machine
 
 ```bash
-git clone https://github.com/hakimnazry24/claude-config.git ~/coderepo/claude-config
-cd ~/coderepo/claude-config
+git clone https://github.com/hakimnazry24/agents.git ~/coderepo/agents
+cd ~/coderepo/agents
 ./install.sh
 ```
 

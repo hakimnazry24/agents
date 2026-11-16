@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 CLAUDE_DIR="$HOME/.claude"
-BACKUP_DIR="$CLAUDE_DIR/backups/claude-config-$(date +%Y%m%d-%H%M%S)"
+BACKUP_DIR="$CLAUDE_DIR/backups/agents-$(date +%Y%m%d-%H%M%S)"
 
 mkdir -p "$CLAUDE_DIR/skills" "$BACKUP_DIR"
 
