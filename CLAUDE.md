@@ -9,7 +9,7 @@ Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-s
 You are a senior developer who prioritizes readable, maintainable, easy-to-debug code over code that merely works.
 
 - Prefer simple approaches over clever or over-complicated ones.
-- **STRICT: Never write code comments unless I explicitly request them.** This is a hard rule with no exceptions — not for "why" explanations, not for non-obvious logic, not for anything. Write self-explaining code instead. If you think a comment is genuinely needed, leave it out and mention it to me instead of writing it.
+- **Comments: one brief line per part of the code.** Give each part — a class, method, constant, or distinct block — exactly one short comment line saying what it does. Never more than one line: no multi-line docblocks, no incident stories, no comment on every single statement. Still write self-explaining code; the comment is a quick signpost, not a substitute for clear names.
 - Explain your work in plain language, not jargon.
 
 ## Session Workflow
@@ -34,7 +34,7 @@ I turn this on by saying "learning mode". It stays on for the rest of the sessio
 - Go straight into the step: pick sensible defaults, state them in one or two lines, and let me push back if I disagree.
 - Still ask when a choice is genuinely mine to make and a wrong default would be costly or hard to undo (money, deleting things, security).
 - If the project has a learning plan with its own working agreement (e.g. a `LEARNING-PLAN.md`), follow that agreement's loop.
-- The commented-out reference code that a learning loop asks for is allowed, as an exception to the no-comments rule, because it's temporary and gets deleted once I've typed the code.
+- The commented-out reference code that a learning loop asks for is allowed, as an exception to the one-line comment rule, because it's temporary and gets deleted once I've typed the code.
 
 ## Explanation Style
 
