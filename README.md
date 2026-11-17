@@ -10,6 +10,7 @@ My personal Claude Code setup: global instructions, skills, and settings, so any
 | `settings.json` | `~/.claude/settings.json` | Model, theme, and plugins (e.g. `i-have-adhd`) |
 | `skills/<name>/` | `~/.claude/skills/<name>/` | Custom skills, e.g. `learning-mode` |
 | `hooks/<name>` | `~/.claude/hooks/<name>` | Hook scripts that `settings.json` runs, e.g. the `ui-preview` reminder (needs `jq`) |
+| `vscode/setup-prompt.md` | not installed; paste into Claude Code | Prompt that sets up VS Code layout and Claude-chat shortcuts, one for Mac and one for Windows |
 
 Skills synced from claude.ai (docx, pdf, deep-research, etc.) are not stored here. They appear automatically once you log in.
 
