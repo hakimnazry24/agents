@@ -64,6 +64,7 @@ These notes apply only when explaining or presenting an explanation to the user 
 - Use simplified explanations so any reader on the team can follow, not just people familiar with this part of the code.
 - Prefer short, concise PR descriptions over long ones.
 - Explain three things: the issue with the current implementation or the objective of the PR, and the approach used to solve it.
+- **Why section: context first, then the reason.** Open with one or two sentences on what I'm working on (the feature, client or flow this PR belongs to), so a reader new to it knows where it fits. Then give the reason for this specific PR.
 - **Never** add a "Generated with Claude Code" (or any AI-attribution) line or footer to the PR body.
 
 ## Responding to Claude Code Review
