@@ -2,11 +2,14 @@
 
 One prompt per OS that sets up VS Code with my editor layout shortcuts and the shortcuts for moving between Claude Code chats. Copy the prompt for your OS and paste it into Claude Code on the new laptop.
 
+The layout number is how many Claude chats you get.
+
 | Shortcut | Mac | Windows |
 |---|---|---|
-| Code left, one Claude chat right | Ctrl+Alt+Cmd+S | Ctrl+Alt+Shift+S |
-| Code left, two Claude chats stacked right | Ctrl+Alt+Cmd+3 | Ctrl+Alt+Shift+3 |
-| 2x2 grid of four Claude chats | Ctrl+Alt+Cmd+G | Ctrl+Alt+Shift+G |
+| Code left, one Claude chat right | Ctrl+Alt+Cmd+1 | Ctrl+Alt+Shift+1 |
+| Code left, two Claude chats stacked right | Ctrl+Alt+Cmd+2 | Ctrl+Alt+Shift+2 |
+| 2x2 grid: code bottom-left, three Claude chats | Ctrl+Alt+Cmd+3 | Ctrl+Alt+Shift+3 |
+| 2x2 grid of four Claude chats | Ctrl+Alt+Cmd+4 | Ctrl+Alt+Shift+4 |
 | Reset to one column + Explorer | Ctrl+Alt+Cmd+R | Ctrl+Alt+Shift+R |
 | Jump to editor group 1–5 | Alt+1 … Alt+5 | Alt+1 … Alt+5 |
 | Jump to the main Claude chat (group 2) | Cmd+Esc | Ctrl+Esc |
@@ -31,11 +34,12 @@ Rules:
 
 ## What the setup does
 
-Claude Code chats open as editor tabs. Each layout shortcut rearranges the screen and opens Claude chats in fixed spots:
+Claude Code chats open as editor tabs. Each layout shortcut rearranges the screen and opens Claude chats in fixed spots. The number is how many Claude chats you get:
 
-- Ctrl+Alt+Cmd+S: two side-by-side columns. Code on the left, one Claude chat on the right. The Claude column is locked so files don't open there.
-- Ctrl+Alt+Cmd+3: code on the left. On the right, two Claude chats stacked top and bottom, both locked.
-- Ctrl+Alt+Cmd+G: a 2x2 grid of four Claude chats.
+- Ctrl+Alt+Cmd+1: two side-by-side columns. Code on the left, one Claude chat on the right. The Claude column is locked so files don't open there.
+- Ctrl+Alt+Cmd+2: code on the left. On the right, two Claude chats stacked top and bottom, both locked.
+- Ctrl+Alt+Cmd+3: a 2x2 grid. Code and images go in the bottom-left (group 2); the other three spots are Claude chats, locked so files and diffs Claude opens land in group 2.
+- Ctrl+Alt+Cmd+4: a 2x2 grid of four Claude chats.
 - Ctrl+Alt+Cmd+R: closes everything and goes back to one column with the file Explorer open.
 - Alt+1 to Alt+5 (Option+1 to Option+5): jump to editor group 1 to 5. This is how I move between Claude chats.
 - Cmd+Esc: when I'm not in a Claude chat, jump to group 2 (the main Claude chat). It also works from the terminal.
@@ -58,7 +62,7 @@ Claude Code chats open as editor tabs. Each layout shortcut rearranges the scree
   { "key": "cmd+alt+enter", "command": "claude-vscode.acceptProposedDiff", "when": "claude-vscode.viewingProposedDiff" },
   { "key": "cmd+alt+backspace", "command": "claude-vscode.rejectProposedDiff", "when": "claude-vscode.viewingProposedDiff" },
   {
-    "key": "ctrl+alt+cmd+g",
+    "key": "ctrl+alt+cmd+4",
     "command": "runCommands",
     "args": { "commands": [
       "workbench.action.closeSidebar",
@@ -95,7 +99,7 @@ Claude Code chats open as editor tabs. Each layout shortcut rearranges the scree
     ] }
   },
   {
-    "key": "ctrl+alt+cmd+s",
+    "key": "ctrl+alt+cmd+1",
     "command": "runCommands",
     "args": { "commands": [
       "workbench.action.closeSidebar",
@@ -113,7 +117,7 @@ Claude Code chats open as editor tabs. Each layout shortcut rearranges the scree
     ] }
   },
   {
-    "key": "ctrl+alt+cmd+3",
+    "key": "ctrl+alt+cmd+2",
     "command": "runCommands",
     "args": { "commands": [
       "workbench.action.closeSidebar",
@@ -135,6 +139,38 @@ Claude Code chats open as editor tabs. Each layout shortcut rearranges the scree
       "workbench.action.focusFirstEditorGroup",
       "workbench.action.unlockEditorGroup",
       "workbench.action.focusSecondEditorGroup"
+    ] }
+  },
+  {
+    "key": "ctrl+alt+cmd+3",
+    "command": "runCommands",
+    "args": { "commands": [
+      "workbench.action.closeSidebar",
+      "workbench.action.closePanel",
+      "workbench.action.focusFirstEditorGroup",
+      "workbench.action.joinAllGroups",
+      "workbench.action.unlockEditorGroup",
+      "workbench.action.newGroupRight",
+      "workbench.action.focusFirstEditorGroup",
+      "workbench.action.newGroupAbove",
+      "workbench.action.focusThirdEditorGroup",
+      "workbench.action.newGroupBelow",
+      "workbench.action.focusFirstEditorGroup",
+      "claude-vscode.primaryEditor.open",
+      { "command": "moveActiveEditor", "args": { "by": "group", "to": "first" } },
+      "claude-vscode.primaryEditor.open",
+      { "command": "moveActiveEditor", "args": { "by": "group", "to": "position", "value": 3 } },
+      "claude-vscode.primaryEditor.open",
+      { "command": "moveActiveEditor", "args": { "by": "group", "to": "position", "value": 4 } },
+      "workbench.action.focusFirstEditorGroup",
+      "workbench.action.lockEditorGroup",
+      "workbench.action.focusThirdEditorGroup",
+      "workbench.action.lockEditorGroup",
+      "workbench.action.focusFourthEditorGroup",
+      "workbench.action.lockEditorGroup",
+      "workbench.action.focusSecondEditorGroup",
+      "workbench.action.unlockEditorGroup",
+      "workbench.action.focusFirstEditorGroup"
     ] }
   },
   { "key": "alt+1", "command": "workbench.action.focusFirstEditorGroup" },
@@ -184,18 +220,19 @@ Rules:
 
 ## What the setup does
 
-Claude Code chats open as editor tabs. Each layout shortcut rearranges the screen and opens Claude chats in fixed spots:
+Claude Code chats open as editor tabs. Each layout shortcut rearranges the screen and opens Claude chats in fixed spots. The number is how many Claude chats you get:
 
-- Ctrl+Alt+Shift+S: two side-by-side columns. Code on the left, one Claude chat on the right. The Claude column is locked so files don't open there.
-- Ctrl+Alt+Shift+3: code on the left. On the right, two Claude chats stacked top and bottom, both locked.
-- Ctrl+Alt+Shift+G: a 2x2 grid of four Claude chats.
+- Ctrl+Alt+Shift+1: two side-by-side columns. Code on the left, one Claude chat on the right. The Claude column is locked so files don't open there.
+- Ctrl+Alt+Shift+2: code on the left. On the right, two Claude chats stacked top and bottom, both locked.
+- Ctrl+Alt+Shift+3: a 2x2 grid. Code and images go in the bottom-left (group 2); the other three spots are Claude chats, locked so files and diffs Claude opens land in group 2.
+- Ctrl+Alt+Shift+4: a 2x2 grid of four Claude chats.
 - Ctrl+Alt+Shift+R: closes everything and goes back to one column with the file Explorer open.
 - Alt+1 to Alt+5: jump to editor group 1 to 5. This is how I move between Claude chats.
 - Ctrl+Esc: when I'm not in a Claude chat, jump to group 2 (the main Claude chat). It also works from the terminal.
 
 ## Mac to Windows key mapping I've chosen
 
-Cmd becomes Ctrl. My Mac layout keys (Ctrl+Alt+Cmd+letter) become Ctrl+Alt+Shift+letter, because VS Code can't bind the Windows key. Ctrl+Shift+Esc opens Task Manager on Windows, so the "new Claude chat" shortcut becomes Ctrl+Alt+Esc.
+Cmd becomes Ctrl. My Mac layout keys (Ctrl+Alt+Cmd+1 to 4 and R) become Ctrl+Alt+Shift+1 to 4 and R, because VS Code can't bind the Windows key. Ctrl+Shift+Esc opens Task Manager on Windows, so the "new Claude chat" shortcut becomes Ctrl+Alt+Esc.
 
 ## Add these to keybindings.json
 
@@ -214,7 +251,7 @@ Cmd becomes Ctrl. My Mac layout keys (Ctrl+Alt+Cmd+letter) become Ctrl+Alt+Shift
   { "key": "ctrl+alt+enter", "command": "claude-vscode.acceptProposedDiff", "when": "claude-vscode.viewingProposedDiff" },
   { "key": "ctrl+alt+backspace", "command": "claude-vscode.rejectProposedDiff", "when": "claude-vscode.viewingProposedDiff" },
   {
-    "key": "ctrl+alt+shift+g",
+    "key": "ctrl+alt+shift+4",
     "command": "runCommands",
     "args": { "commands": [
       "workbench.action.closeSidebar",
@@ -251,7 +288,7 @@ Cmd becomes Ctrl. My Mac layout keys (Ctrl+Alt+Cmd+letter) become Ctrl+Alt+Shift
     ] }
   },
   {
-    "key": "ctrl+alt+shift+s",
+    "key": "ctrl+alt+shift+1",
     "command": "runCommands",
     "args": { "commands": [
       "workbench.action.closeSidebar",
@@ -269,7 +306,7 @@ Cmd becomes Ctrl. My Mac layout keys (Ctrl+Alt+Cmd+letter) become Ctrl+Alt+Shift
     ] }
   },
   {
-    "key": "ctrl+alt+shift+3",
+    "key": "ctrl+alt+shift+2",
     "command": "runCommands",
     "args": { "commands": [
       "workbench.action.closeSidebar",
@@ -291,6 +328,38 @@ Cmd becomes Ctrl. My Mac layout keys (Ctrl+Alt+Cmd+letter) become Ctrl+Alt+Shift
       "workbench.action.focusFirstEditorGroup",
       "workbench.action.unlockEditorGroup",
       "workbench.action.focusSecondEditorGroup"
+    ] }
+  },
+  {
+    "key": "ctrl+alt+shift+3",
+    "command": "runCommands",
+    "args": { "commands": [
+      "workbench.action.closeSidebar",
+      "workbench.action.closePanel",
+      "workbench.action.focusFirstEditorGroup",
+      "workbench.action.joinAllGroups",
+      "workbench.action.unlockEditorGroup",
+      "workbench.action.newGroupRight",
+      "workbench.action.focusFirstEditorGroup",
+      "workbench.action.newGroupAbove",
+      "workbench.action.focusThirdEditorGroup",
+      "workbench.action.newGroupBelow",
+      "workbench.action.focusFirstEditorGroup",
+      "claude-vscode.primaryEditor.open",
+      { "command": "moveActiveEditor", "args": { "by": "group", "to": "first" } },
+      "claude-vscode.primaryEditor.open",
+      { "command": "moveActiveEditor", "args": { "by": "group", "to": "position", "value": 3 } },
+      "claude-vscode.primaryEditor.open",
+      { "command": "moveActiveEditor", "args": { "by": "group", "to": "position", "value": 4 } },
+      "workbench.action.focusFirstEditorGroup",
+      "workbench.action.lockEditorGroup",
+      "workbench.action.focusThirdEditorGroup",
+      "workbench.action.lockEditorGroup",
+      "workbench.action.focusFourthEditorGroup",
+      "workbench.action.lockEditorGroup",
+      "workbench.action.focusSecondEditorGroup",
+      "workbench.action.unlockEditorGroup",
+      "workbench.action.focusFirstEditorGroup"
     ] }
   },
   { "key": "alt+1", "command": "workbench.action.focusFirstEditorGroup" },
