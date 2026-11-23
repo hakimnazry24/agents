@@ -32,5 +32,18 @@ The audit covers exactly these five repos, all under `/Users/hakimnazry/coderepo
 - **Tests:** backend `innutrire/tests/`, tablet app `tests/`.
 - **Third-party software:** `requirements*.txt`, `pyproject.toml`, `uv.lock`, `package.json`, `package-lock.json`, `frontend_innutrire/licenses/`.
 - **Problem tracking:** the Trello boards FE/BE, DevOps/Security and AI. These are outside the repo, so mark the status `Outside repo` unless the repo links to them.
+- **Shared compliance documents:** `~/coderepo/compliance_docs` (GitHub `Innutrire/compliance_docs`) holds documents that cover all five repos: risk management file and plan, development plan, architecture, SOUP list, requirements, procedures, "standard does not apply" statements and the medical device file index. It is not an audit target, but when a check looks for a system-wide document (e.g. RM-01, RM-09, SW-02, QM-01), search it too and cite `compliance_docs/<path>:line` as evidence in every repo the document covers.
 - **Study and regulatory documents:** outside the repos (`~/Documents/INNUTRIRE-compliance/` holds summaries only). Ethics approvals, the study protocol and signed procedures are `Outside repo`.
+
+## Names used on Trello cards
+
+Cards on the Compliance and standard board use these plain names in their "Found in" line:
+
+| Repo | Name on cards |
+|---|---|
+| `frontend_innutrire` | Tablet app |
+| `django_backend_innutrire` | Hospital server |
+| `moniteer` | Moniteer |
+| `tablet-setup-scripts` | Tablet setup |
+| `hospital-server-deployment-iac` | Server setup |
 - **Hardware:** Microsoft Surface tablets and ordinary servers; no INNUTRIRE-made hardware; no cable link to the calorimeters.

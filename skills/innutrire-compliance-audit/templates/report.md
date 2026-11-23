@@ -2,7 +2,7 @@
 
 - **Date:** <YYYY-MM-DD>
 - **Repo:** <repo name> (<role>), commit `<short sha>` on `<branch>`
-- **Scope:** nine locked standards: ISO 14971, IEC 62304, IEC 62366-1, GDHP, ISO 14155, ISO 13485, IEC 60601-1, IEC 60601-1-2, ISO 10993
+- **Scope:** nine locked standards: ISO 14971:2019, IEC 62304:2006+A1:2015, IEC 62366-1:2015+A1:2020, GDHP GMDC v1.0, ISO 14155:2020, ISO 13485:2016, IEC 60601-1:2005+A1:2012, IEC 60601-1-2:2014, ISO 10993-1:2018
 
 ## Summary
 
@@ -45,4 +45,4 @@ Anything relevant the checklists don't cover. No status, no severity.
 
 ---
 
-*This audit checks for evidence in the code repository only. It is based on public previews and summaries of the standards, not their full texts, and clause numbers are for orientation. It does not certify compliance; a qualified person must confirm each finding.*
+*This audit checks for evidence in the code repository only. All nine standards were checked against their full official texts (editions listed in the skill). It does not certify compliance; a qualified person must confirm each finding.*
